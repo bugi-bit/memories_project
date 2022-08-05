@@ -26,15 +26,28 @@ const CONNECTION_URL =
 
 const PORT = process.env.PORT || 8000;
 
-mongoose
-  .connect(process.env.CONNECTION_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() =>
-    app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
-  )
-  .catch((error) => console.log(error));
+try {
+  await mongoose
+    .connect(process.env.CONNECTION_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+    .then(() =>
+      app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
+    );
+} catch (error) {
+  handleError(error);
+}
+
+// mongoose
+//   .connect(process.env.CONNECTION_URL, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() =>
+//     app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
+//   )
+//   .catch((error) => console.log(error));
 
 // app.listen(PORT, () => {
 //   console.log("server running");
