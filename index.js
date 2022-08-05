@@ -16,7 +16,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(
   "static",
-  express.static(path.join(`${__dirname}/../client/build/static`))
+  express.static(path.join(`${__dirname}/client/build/static`))
 );
 dotenv.config();
 
@@ -27,7 +27,7 @@ app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
 
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(`${__dirname}/../client/build/static`));
+  res.sendFile(path.join(`${__dirname}/client/build/static`));
 });
 
 // const CONNECTION_URL = "mongodb://127.0.0.1:27017";
