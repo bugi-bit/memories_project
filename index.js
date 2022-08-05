@@ -36,7 +36,7 @@ try {
       app.listen(PORT, () => console.log(`Server running on port: ${PORT}`))
     );
 } catch (error) {
-  handleError(error);
+  console.log(error);
 }
 
 // mongoose
