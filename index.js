@@ -15,7 +15,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(
-  "static",
+  "/static",
   express.static(path.join(`${__dirname}/client/build/static`))
 );
 dotenv.config();
@@ -26,7 +26,7 @@ app.use(cors());
 app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
 
-app.get("/*", (req, res) => {
+app.get("/", (req, res) => {
   res.sendFile(path.join(`${__dirname}/client/build/static`));
 });
 
