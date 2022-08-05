@@ -10,10 +10,7 @@ import userRoutes from "./routes/users.js";
 
 const app = express();
 
-app.use(
-  "/static",
-  express.static(path.join(__dirname, "./../client/build/static"))
-);
+app.use(express.static(path.join("../../client/build/static")));
 dotenv.config();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
