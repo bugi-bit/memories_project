@@ -10,7 +10,7 @@ import userRoutes from "./routes/users.js";
 
 const app = express();
 
-app.use(express.static(path.join("../../client/build/static")));
+app.use("static", express.static(path.join("../../client/build")));
 dotenv.config();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -20,7 +20,7 @@ app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
 
 app.get("/*", (req, res) => {
-  res.sendFile(express.static(path.join("../../client/build/static")));
+  res.sendFile(path.join("../../client/build"));
 });
 
 // const CONNECTION_URL = "mongodb://127.0.0.1:27017";
