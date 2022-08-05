@@ -14,10 +14,7 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(
-  "static",
-  express.static(path.join(`${__dirname}./client/build/static`))
-);
+app.use("static", express.static(path.join(`${__dirname}./client/build`)));
 dotenv.config();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -27,7 +24,7 @@ app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
 
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(`${__dirname}./client/build/static`));
+  res.sendFile(path.join(`${__dirname}./client/build`));
 });
 
 // const CONNECTION_URL = "mongodb://127.0.0.1:27017";
