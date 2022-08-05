@@ -21,8 +21,8 @@ app.get("/", (req, res) => {
 });
 
 // const CONNECTION_URL = "mongodb://127.0.0.1:27017";
-// const CONNECTION_URL =
-//   "mongodb+srv://jantenanmac:j4nt3n4n@cluster0.s1ztu.mongodb.net/?retryWrites=true&w=majority";
+const CONNECTION_URL =
+  "mongodb+srv://jantenanmac:j4nt3n4n@cluster0.s1ztu.mongodb.net/?retryWrites=true&w=majority";
 
 const PORT = process.env.PORT || 8000;
 
