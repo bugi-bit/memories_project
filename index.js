@@ -24,7 +24,7 @@ app.use("/user", userRoutes);
 // const CONNECTION_URL =
 //   "mongodb+srv://jantenanmac:j4nt3n4n@cluster0.s1ztu.mongodb.net/?retryWrites=true&w=majority";
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
 mongoose
   .connect(process.env.CONNECTION_URL, {
