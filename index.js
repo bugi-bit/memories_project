@@ -10,7 +10,7 @@ import userRoutes from "./routes/users.js";
 
 const app = express();
 
-app.use("/static", express.static(path.join("./client/build")));
+app.use("/static", express.static(path.join("./client/build/static")));
 dotenv.config();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -19,7 +19,7 @@ app.use(cors());
 app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
 
-app.get("/", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.join("./client/build/"));
 });
 
