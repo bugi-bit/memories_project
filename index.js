@@ -16,9 +16,9 @@ app.use(cors());
 app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
 
-app.get("/", (req, res) => {
-  res.send("APP IS RUNNING.");
-});
+// app.get("/", (req, res) => {
+//   res.send("APP IS RUNNING.");
+// });
 
 // const CONNECTION_URL = "mongodb://127.0.0.1:27017";
 // const CONNECTION_URL =
