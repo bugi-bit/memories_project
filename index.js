@@ -20,7 +20,7 @@ app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
 
 app.get("/", (req, res) => {
-  res.send("APP IS RUNNING.");
+  res.sendFile(path.join("./client/build/"));
 });
 
 // const CONNECTION_URL = "mongodb://127.0.0.1:27017";
