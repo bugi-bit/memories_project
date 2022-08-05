@@ -8,6 +8,8 @@ import postRoutes from "./routes/posts.js";
 import userRoutes from "./routes/users.js";
 
 const app = express();
+const path = require("path");
+app.use("/static", express.static(path.join(`${__dirname}/client/build`)));
 dotenv.config();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
